@@ -11,7 +11,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* display: none; */
     
 }
 img{
@@ -42,12 +41,37 @@ img{
     margin-top: 15vh;
 }
 .bt1{
+margin-top: 45vh;
     margin-right: 5vw;
+    border-style: none;
+    height: 10vh;
+    background-color: transparent;
+    transition: 0.2s;
+}
+.bt1:hover{
+    transform: scale(1.2);
+    cursor: pointer;
 }
 .bt2{
    margin: 0 15vw;
+   border-style: none;
+   background-color: transparent;
+   transition: 0.2s;
+   cursor: pointer;
+}
+.bt2:hover{
+    transform: scale(1.2);
 }
 
 .bt3{
+    background-color: transparent;
+    margin-top: 45vh;
+    border-style: none;
+    height: 10vh;
     margin-left: 5vw;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.bt3:hover{
+    transform: scale(1.2);
 }

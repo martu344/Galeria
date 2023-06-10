@@ -2,6 +2,8 @@
 let gallery = document.getElementById('galeria')
 let galleryBig = document.getElementById('grande')
 
+
+//si agrego mas imagenes tengo que seguir la secuencia imagen1,imagen2,imagen3...
 function galeriaGrande() {
   for(let j = 0; j <= 6;j++){
             for(let i = 1 ; i <=5; i++){
@@ -10,7 +12,7 @@ function galeriaGrande() {
               imgp.src = srcc;
               imgp.className = "imgg";
               gallery.appendChild(imgp);
-
+              
             }
           }
 

@@ -6,10 +6,11 @@ let nombreimagen = []
 //si agrego mas imagenes tengo que seguir la secuencia imagen1,imagen2,imagen3...
 function galeriaGrande() {
   for(let j = 0; j <= 15;j++){
-            for(let i = 1 ; i <=5; i++){
+            for(let i = 1 ; i <=9; i++){
               let srcc= 'imagenes/imagen' + i + '.jpg';
               var divp = document.createElement("div")
               divp.className = "divimg"
+              //divp.id = "divimgg"
               var imgp = document.createElement("img")
               imgp.src = srcc;
               imgp.className = "imgg";
@@ -23,20 +24,22 @@ function galeriaGrande() {
         galeriaGrande();
 
 const imgGallery = document.getElementsByClassName('imgg')
+const divimagen = document.getElementsByClassName('divimg')
 const img= document.getElementById('imagen')
 let identificador;
 
     const zoom = (ruta)=>{
         galleryBig.style.display= "flex";
         gallery.style.display = "none"
-        img.src = ruta.target.src
-        identificador = ruta.target.id
+        img.src = ruta.target.querySelector('img').src
+        identificador = ruta.target.querySelector('img').id
         nombreimg.innerHTML = nombreimagen[identificador]
-        
+  
       }
+      
        
         for(let h = 0; h < imgGallery.length;h++){
-          imgGallery[h].addEventListener('click',zoom)
+          divimagen[h].addEventListener('click',zoom)
           imgGallery[h].id=[h]
           nombreimagen.push( 'imagen' + h + '.jpg') 
         }

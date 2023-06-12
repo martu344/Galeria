@@ -1,18 +1,20 @@
 
-let gallery = document.getElementById('galeria')
-let galleryBig = document.getElementById('grande')
-
-
+const gallery = document.getElementById('galeria')
+const galleryBig = document.getElementById('grande')
+const nombreimg =document.getElementById('nombredelaimg')
+let nombreimagen = []
 //si agrego mas imagenes tengo que seguir la secuencia imagen1,imagen2,imagen3...
 function galeriaGrande() {
-  for(let j = 0; j <= 6;j++){
+  for(let j = 0; j <= 15;j++){
             for(let i = 1 ; i <=5; i++){
               let srcc= 'imagenes/imagen' + i + '.jpg';
+              var divp = document.createElement("div")
+              divp.className = "divimg"
               var imgp = document.createElement("img")
               imgp.src = srcc;
               imgp.className = "imgg";
-              gallery.appendChild(imgp);
-              
+              gallery.appendChild(divp);
+              divp.appendChild(imgp);
             }
           }
 
@@ -20,8 +22,8 @@ function galeriaGrande() {
 
         galeriaGrande();
 
-let imgGallery = document.getElementsByClassName('imgg')
-let img= document.getElementById('imagen')
+const imgGallery = document.getElementsByClassName('imgg')
+const img= document.getElementById('imagen')
 let identificador;
 
     const zoom = (ruta)=>{
@@ -29,17 +31,19 @@ let identificador;
         gallery.style.display = "none"
         img.src = ruta.target.src
         identificador = ruta.target.id
-          
+        nombreimg.innerHTML = nombreimagen[identificador]
+        
       }
        
         for(let h = 0; h < imgGallery.length;h++){
           imgGallery[h].addEventListener('click',zoom)
           imgGallery[h].id=[h]
+          nombreimagen.push( 'imagen' + h + '.jpg') 
         }
 
-let atras = document.getElementById("btn1")
-let adelante = document.getElementById("btn3")
-let close = document.getElementById("btn2")
+const atras = document.getElementById("btn1")
+const adelante = document.getElementById("btn3")
+const close = document.getElementById("btn2")
   
     const retroceder = () => {
       if (identificador > 0){
@@ -47,6 +51,7 @@ let close = document.getElementById("btn2")
       }
       const preimg = document.getElementById(identificador)
       img.src = preimg.src
+      nombreimg.innerHTML = nombreimagen[identificador]
       
     }
 
@@ -58,7 +63,7 @@ let close = document.getElementById("btn2")
       }
       const preimg = document.getElementById(identificador)
       img.src = preimg.src
-     
+      nombreimg.innerHTML = nombreimagen[identificador]
     }
 
     adelante.addEventListener("click",adelantar)

@@ -7,19 +7,31 @@
 .pequeñas{
     margin-top: 20px;
     padding: 0 10px;
-    border: 1px solid black;
+    border: 1px solid rgb(172, 171, 171);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     
 }
-img{
-    border: 1px solid black;
+.momentos{
+    margin-top: 5vh;
+    margin-left: 2vw;
+}
+.divimg{
+    border: 1px solid rgb(172, 171, 171);
     width: 150px;
     height: 200px;
     margin:20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);;
+    overflow: hidden;
 }
+.divimg:hover{
+    background-color:  rgb(219, 218, 218);
+}
+.imgg{
+    width: 150px;
 
+}
 .grande{
     width: 100vw;
     height: 100vh;
@@ -31,14 +43,14 @@ img{
     display: none;
     background-color: white;
 }
-.grande div{
-    width: 30vw;
-    height: 30vw;
-}
 .grande img{
     width: 30vw;
+}
+.divimggrande{
+    border: 1px solid rgb(172, 171, 171);
+    width: 30vw;
     height: 30vw;
-    margin-top: 15vh;
+    margin-top: 5vh;
 }
 .bt1{
 margin-top: 45vh;
@@ -53,7 +65,7 @@ margin-top: 45vh;
     cursor: pointer;
 }
 .bt2{
-   margin: 0 15vw;
+   margin: 0 13vw;
    border-style: none;
    background-color: transparent;
    transition: 0.2s;
@@ -74,4 +86,8 @@ margin-top: 45vh;
 }
 .bt3:hover{
     transform: scale(1.2);
+}
+#nombredelaimg{
+    text-align: center;
+    margin-top: 5vh;
 }
